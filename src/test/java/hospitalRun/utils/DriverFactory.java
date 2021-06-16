@@ -1,4 +1,4 @@
-package hospitalRun.driver;
+package hospitalRun.utils;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,7 @@ import org.openqa.selenium.remote.BrowserType;
 public class DriverFactory {
 
     public WebDriver getDriver() {
-        String browserName = System.getProperty("browser");
+        String browserName = System.getProperty("browser", "chrome");
         switch (browserName.toLowerCase()) {
             case BrowserType.CHROME -> {
                 WebDriverManager.chromedriver().setup();
