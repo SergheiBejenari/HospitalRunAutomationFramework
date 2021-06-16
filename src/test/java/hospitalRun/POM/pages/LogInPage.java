@@ -5,18 +5,14 @@ import hospitalRun.POM.pages.common.BasePage;
 import io.qameta.allure.Step;
 import lombok.Getter;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
-import static org.testng.AssertJUnit.assertEquals;
 
 @Getter
 public class LogInPage extends BasePage {
 
     private final By userNameField = By.cssSelector("#identification");
     private final By passwordField = By.cssSelector("#password");
-    private final By signInButton = By.xpath("//button[contains(text(),'Sign in')]");
+    private final By signInButton = By.cssSelector("button[type='submit']");
     private final By errorMessageSel = By.cssSelector(".form-signin-alert");
 
     public LogInPage(Application app) {

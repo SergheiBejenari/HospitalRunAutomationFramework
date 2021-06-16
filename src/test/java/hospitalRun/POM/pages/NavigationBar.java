@@ -12,16 +12,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 @Getter
 public class NavigationBar extends BasePage {
 
-    private final By medicationDropDown = By.xpath("//a[@href='#/medication']");
+    private final By medicationDropDown = By.linkText("Medication");
     private final By requestsButton = By.linkText("Requests");
     private final By completedButton = By.linkText("Completed");
     private final By newRequestButton = By.linkText("New Request");
     private final By returnMedicationButton = By.linkText("Return Medication");
 
-    @FindBy(xpath = "//span[(contains(@class,'mega-octicon octicon-gear'))]")
+    @FindBy(css = ".mega-octicon.octicon-gear")
     private WebElement cogwheelButton;
 
-    private By logOutButton = By.xpath("//a[(contains(@class,'logout'))]");
+    private final By logOutButton = By.cssSelector(".logout");
 
     public NavigationBar(Application app) {
         super(app);

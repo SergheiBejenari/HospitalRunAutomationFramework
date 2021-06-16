@@ -20,21 +20,13 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOfAllE
 public class MedicationPage extends BasePage {
     short millis = 500;
     private final By patientField = By.cssSelector("input[id*=patientTypeAhead]");
-    private final By visitDropDown = By.xpath("//select[contains(@id,'visit')]");
-    @FindBy(xpath = "//option[string()='10/19/2020 (Pharmacy)']")
-    private WebElement availableDate;
-    @FindBy(xpath = "//input[contains(@id,'inventoryItemTypeAhead')]")
-    private WebElement visitDateDropDown;
-    private final By medicationField = By.xpath("//input[contains(@id,'inventoryItemTypeAhead')]");
-    @FindBy(xpath = "//span//div//div//div[contains(string(),'available')]")
-    private WebElement availableMedication;
-    private final By prescriptionField = By.xpath("//textarea[contains(@id,'prescription')]");
-    private final By prescriptionDateField = By.xpath("//input[contains(@id,'display_prescriptionDate')]");
-    private final By quantityRequestedField = By.xpath("//input[contains(@id,'quantity')]");
-    private final By refillsField = By.xpath("//input[contains(@id,'refills')]");
+    private final By visitDropDown = By.cssSelector("select[id*=visit]");
+    private final By medicationField = By.cssSelector("input[id*=inventoryItemTypeAhead]");
+    private final By prescriptionField = By.cssSelector("textarea[id*=prescription]");
+    private final By prescriptionDateField = By.cssSelector("input[id*=prescription]");
+    private final By quantityRequestedField = By.cssSelector("input[id*=quantity]");
+    private final By refillsField = By.cssSelector("input[id*=refills]");
     private final By addButton = By.xpath("//button[normalize-space()='Add']");
-    @FindBy(xpath = "//h1[contains(text(),'New Medication Request')]")
-    private WebElement newMedicationHeader;
     private final By patientOptions = By.cssSelector(".test-patient-input .tt-suggestion");
     @FindBy(css = ".test-medication-input .tt-suggestion")
     private List<WebElement> medicationOptions;
