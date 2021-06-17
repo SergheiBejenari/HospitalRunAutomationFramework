@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 @Getter
 public class PopUp extends BasePage {
 
-    private final By okButton = By.cssSelector("div[class='modal-footer']>button[class*='btn btn-primary on-white ']");
+    private final By okButton = By.cssSelector(".modal-footer .btn.btn-primary.on-white");
     private final By crossButton = By.cssSelector(".octicon.octicon-x");
     private final By popUpSuccessMessage = By.xpath("//h4[@class='modal-title']");
 
