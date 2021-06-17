@@ -26,7 +26,7 @@ public class MedicationPage extends BasePage {
     private final By prescriptionDateField = By.cssSelector("input[id*=prescription]");
     private final By quantityRequestedField = By.cssSelector("input[id*=quantity]");
     private final By refillsField = By.cssSelector("input[id*=refills]");
-    private final By addButton = By.xpath("//button[normalize-space()='Add']");
+    private final By addButton = By.cssSelector("div[class=panel-footer]>button[class*='btn btn-primary on-white ']");
     private final By patientOptions = By.cssSelector(".test-patient-input .tt-suggestion");
     @FindBy(css = ".test-medication-input .tt-suggestion")
     private List<WebElement> medicationOptions;

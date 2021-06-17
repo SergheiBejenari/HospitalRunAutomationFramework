@@ -12,11 +12,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 @Getter
 public class NavigationBar extends BasePage {
 
-    private final By medicationDropDown = By.linkText("Medication");
-    private final By requestsButton = By.linkText("Requests");
-    private final By completedButton = By.linkText("Completed");
-    private final By newRequestButton = By.linkText("New Request");
-    private final By returnMedicationButton = By.linkText("Return Medication");
+    private final By medicationDropDown = By.xpath("//a[@href='#/medication']//span[contains(@class,'mega-octicon octicon-file-text')]");
+    private final By requestsButton = By.xpath("//a[@href= '#/medication'][contains(@class,'category-sub-item')]//span[contains(@class,'octicon octicon-chevron-right')]");
+    private final By completedButton = By.xpath("//a[@href= '#/medication/completed'][contains(@class,'nav-link ember-view')]//span[@class='octicon octicon-chevron-right']");
+    private final By newRequestButton = By.xpath("//a[@href= '#/medication/edit/new']");
+    private final By returnMedicationButton = By.xpath("//a[@href= '#/medication/return/new']");
 
     @FindBy(css = ".mega-octicon.octicon-gear")
     private WebElement cogwheelButton;

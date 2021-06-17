@@ -12,7 +12,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.visibilityOf;
 @Getter
 public class PatientListeningPage extends BasePage {
 
-    @FindBy(xpath = "//h1[contains(text(),'Patient Listing')]")
+    @FindBy(css = ".view-top-bar .view-current-title")
     private WebElement patientListeningPageHeader;
 
     public PatientListeningPage(Application app) {
