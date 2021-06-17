@@ -3,10 +3,7 @@ package hospitalRun.tests;
 import hospitalRun.POM.Application;
 import hospitalRun.utils.RandomDataGenerator;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.time.LocalDate;
 
@@ -16,8 +13,13 @@ import static org.testng.Assert.assertTrue;
 public class Tests {
     private final Application app = new Application();
 
-    @BeforeMethod
+    @BeforeSuite
     public void getHomePage() {
+        app.logInPage().open();
+    }
+
+    @AfterTest(groups = "negative")
+    public void getLoginPage() {
         app.logInPage().open();
     }
 
@@ -32,7 +34,7 @@ public class Tests {
         app.patientListeningPage().waitForDisplayed();
     }
 
-    @Test
+    @Test(groups = "negative")
     void logInTestNegative() {
         app.logInPage().logIn("User", "Password1234");
         assertEquals(app.logInPage().getErrorMessage(), "Username or password is incorrect.");
