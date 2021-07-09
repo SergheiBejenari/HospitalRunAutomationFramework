@@ -11,15 +11,14 @@ public class DriverFactory {
     public WebDriver getDriver() {
         String browserName = System.getProperty("browser", "chrome");
         switch (browserName.toLowerCase()) {
-            case BrowserType.CHROME -> {
+            case BrowserType.CHROME:
                 WebDriverManager.chromedriver().setup();
                 return new ChromeDriver();
-            }
-            case BrowserType.FIREFOX -> {
+            case BrowserType.FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
-            }
-            default -> throw new RuntimeException("ATF is not configured for " + browserName);
+            default:
+                throw new RuntimeException("ATF is not configured for " + browserName);
         }
     }
 }
